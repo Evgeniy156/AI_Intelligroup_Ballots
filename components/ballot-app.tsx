@@ -232,7 +232,7 @@ export function BallotApp() {
         toast.error(message)
       }
     },
-    [apiKey]
+    [apiKey, baseUrl]
   )
 
   function handleCancelProcessing() {
