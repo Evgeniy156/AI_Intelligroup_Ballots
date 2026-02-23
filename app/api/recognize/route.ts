@@ -11,7 +11,8 @@ function getGeminiUrl(apiKey: string, baseUrl: string) {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { imageBase64, apiKey, baseUrl = "https://generativelanguage.googleapis.com/v1beta" } = body
+    const { imageBase64, apiKey } = body
+    const baseUrl = body.baseUrl || "https://generativelanguage.googleapis.com/v1beta"
 
     if (!apiKey || typeof apiKey !== "string") {
       return NextResponse.json(
